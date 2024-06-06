@@ -35,10 +35,11 @@ var (
 )
 
 type Indexer struct {
-	accountRepo    eventindexer.AccountRepository
-	eventRepo      eventindexer.EventRepository
-	nftBalanceRepo eventindexer.NFTBalanceRepository
-	txRepo         eventindexer.TransactionRepository
+	accountRepo     eventindexer.AccountRepository
+	eventRepo       eventindexer.EventRepository
+	nftBalanceRepo  eventindexer.NFTBalanceRepository
+	nftMetadataRepo eventindexer.NFTMetadataRepository
+	txRepo          eventindexer.TransactionRepository
 
 	ethClient  *ethclient.Client
 	srcChainID uint64
@@ -132,6 +133,11 @@ func InitFromConfig(ctx context.Context, i *Indexer, cfg *Config) error {
 		return err
 	}
 
+	nftMetadataRepository, err := repo.NewNFTMetadataRepository(db)
+	if err != nil {
+		return err
+	}
+
 	txRepository, err := repo.NewTransactionRepository(db)
 	if err != nil {
 		return err
@@ -184,6 +190,7 @@ func InitFromConfig(ctx context.Context, i *Indexer, cfg *Config) error {
 	i.accountRepo = accountRepository
 	i.eventRepo = eventRepository
 	i.nftBalanceRepo = nftBalanceRepository
+	i.nftMetadataRepo = nftMetadataRepository
 	i.txRepo = txRepository
 
 	i.srcChainID = chainID.Uint64()
