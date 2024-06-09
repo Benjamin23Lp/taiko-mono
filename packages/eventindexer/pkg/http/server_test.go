@@ -20,10 +20,11 @@ func newTestServer(url string) *Server {
 	_ = godotenv.Load("../.test.env")
 
 	srv := &Server{
-		cache:          cache.New(5*time.Second, 6*time.Second),
-		echo:           echo.New(),
-		eventRepo:      mock.NewEventRepository(),
-		nftBalanceRepo: mock.NewNFTBalanceRepository(),
+		cache:           cache.New(5*time.Second, 6*time.Second),
+		echo:            echo.New(),
+		eventRepo:       mock.NewEventRepository(),
+		nftBalanceRepo:  mock.NewNFTBalanceRepository(),
+		nftMetadataRepo: mock.NewNFTMetadataRepository(),
 	}
 
 	srv.configureMiddleware([]string{"*"})
@@ -41,10 +42,11 @@ func Test_NewServer(t *testing.T) {
 		{
 			"success",
 			NewServerOpts{
-				Echo:           echo.New(),
-				EventRepo:      &repo.EventRepository{},
-				CorsOrigins:    make([]string, 0),
-				NFTBalanceRepo: &repo.NFTBalanceRepository{},
+				Echo:            echo.New(),
+				EventRepo:       &repo.EventRepository{},
+				CorsOrigins:     make([]string, 0),
+				NFTBalanceRepo:  &repo.NFTBalanceRepository{},
+				NFTMetadataRepo: &repo.NFTMetadataRepository{},
 			},
 			nil,
 		},
@@ -58,20 +60,32 @@ func Test_NewServer(t *testing.T) {
 			eventindexer.ErrNoNFTBalanceRepository,
 		},
 		{
-			"noEventRepo",
+			"noNftMetadataRepo",
 			NewServerOpts{
 				Echo:           echo.New(),
-				CorsOrigins:    make([]string, 0),
+				EventRepo:      &repo.EventRepository{},
 				NFTBalanceRepo: &repo.NFTBalanceRepository{},
+				CorsOrigins:    make([]string, 0),
+			},
+			eventindexer.ErrNoNFTMetadataRepository,
+		},
+		{
+			"noEventRepo",
+			NewServerOpts{
+				Echo:            echo.New(),
+				CorsOrigins:     make([]string, 0),
+				NFTBalanceRepo:  &repo.NFTBalanceRepository{},
+				NFTMetadataRepo: &repo.NFTMetadataRepository{},
 			},
 			eventindexer.ErrNoEventRepository,
 		},
 		{
 			"noCorsOrigins",
 			NewServerOpts{
-				Echo:           echo.New(),
-				EventRepo:      &repo.EventRepository{},
-				NFTBalanceRepo: &repo.NFTBalanceRepository{},
+				Echo:            echo.New(),
+				EventRepo:       &repo.EventRepository{},
+				NFTBalanceRepo:  &repo.NFTBalanceRepository{},
+				NFTMetadataRepo: &repo.NFTMetadataRepository{},
 			},
 			eventindexer.ErrNoCORSOrigins,
 		},
