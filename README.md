@@ -55,11 +55,3 @@ taiko-mono/
 ## Issues
 
 If you find a bug or have a feature request, please [open an issue](https://github.com/taikoxyz/taiko-mono/issues/new/choose).
-
-## Contributing
-
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to contribute. You can also check out our grants cycle at [grants.taiko.xyz](https://grants.taiko.xyz).
-
-## Getting support
-
-Reach out to the community on [Discord](https://discord.gg/taikoxyz) if you need any help!
