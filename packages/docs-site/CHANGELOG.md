@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/taikoxyz/taiko-mono/compare/docs-site-v1.9.0...docs-site-v1.10.0) (2024-06-10)
+
+
+### Features
+
+* **docs-site:** update guides ([#17536](https://github.com/taikoxyz/taiko-mono/issues/17536)) ([4a9ba42](https://github.com/taikoxyz/taiko-mono/commit/4a9ba42cadd1b2cd7d1a29097192ffe167eda3e2))
+
 ## [1.9.0](https://github.com/taikoxyz/taiko-mono/compare/docs-site-v1.8.1...docs-site-v1.9.0) (2024-06-07)
 
 
