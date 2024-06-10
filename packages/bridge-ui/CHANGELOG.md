@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.12.0](https://github.com/taikoxyz/taiko-mono/compare/bridge-ui-v2.11.0...bridge-ui-v2.12.0) (2024-06-10)
+
+
+### Features
+
+* **bridge-ui:** polishing ([#17460](https://github.com/taikoxyz/taiko-mono/issues/17460)) ([a3faee0](https://github.com/taikoxyz/taiko-mono/commit/a3faee088ee5ed235f9b4020aa2afce77d0f8108))
+* **bridge-ui:** rounding fix. ([#17409](https://github.com/taikoxyz/taiko-mono/issues/17409)) ([eac7434](https://github.com/taikoxyz/taiko-mono/commit/eac743445b9a1c21ed03aede036098ba3add261a))
+* **bridge-ui:** update usdc wording, add minimum fee check ([#17419](https://github.com/taikoxyz/taiko-mono/issues/17419)) ([07211da](https://github.com/taikoxyz/taiko-mono/commit/07211da83c9f5ca782fc5d9a02680968bf81ee24))
+
+
+### Bug Fixes
+
+* **bridge-ui:** bigint conversion ([#17534](https://github.com/taikoxyz/taiko-mono/issues/17534)) ([4279ccd](https://github.com/taikoxyz/taiko-mono/commit/4279ccd59024578d51b39a6b26a0138409a42f44))
+* **bridge-ui:** fix funds message ([#17507](https://github.com/taikoxyz/taiko-mono/issues/17507)) ([55293a5](https://github.com/taikoxyz/taiko-mono/commit/55293a5208f729964279fb07056a90b08e56a4ec))
+* **bridge-ui:** fix manual claim issue ([#17518](https://github.com/taikoxyz/taiko-mono/issues/17518)) ([3f5b73d](https://github.com/taikoxyz/taiko-mono/commit/3f5b73ddf47dd1c9853d5d2d9a75e8cd95ecccbf))
+* **bridge-ui:** fix USDT approvals ([#17539](https://github.com/taikoxyz/taiko-mono/issues/17539)) ([37cb7af](https://github.com/taikoxyz/taiko-mono/commit/37cb7af834d189051c2de895b384997c4fc13b9a))
+* **bridge-ui:** increase gaslimit for erc20 ([#17531](https://github.com/taikoxyz/taiko-mono/issues/17531)) ([3a7268d](https://github.com/taikoxyz/taiko-mono/commit/3a7268df33e5f778b22b7624c4baec6739083641))
+* **bridge-ui:** recallMessage fix ([#17547](https://github.com/taikoxyz/taiko-mono/issues/17547)) ([11755d1](https://github.com/taikoxyz/taiko-mono/commit/11755d164a532980214e69219d328fa66a06f6cc))
+* **bridge-ui:** small fixes ([#17375](https://github.com/taikoxyz/taiko-mono/issues/17375)) ([5236d0a](https://github.com/taikoxyz/taiko-mono/commit/5236d0a50a82e3915eb955962ccc930110d6274e))
+
 ## [2.11.0](https://github.com/taikoxyz/taiko-mono/compare/bridge-ui-v2.10.1...bridge-ui-v2.11.0) (2024-05-27)
 
 
